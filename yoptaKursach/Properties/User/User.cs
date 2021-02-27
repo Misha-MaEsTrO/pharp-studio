@@ -6,6 +6,10 @@
     }
 
     public class User {
+        public User() {
+            //TODO: Make a query to DB
+        }
+        
         public int Id { get; }
 
         public UserRole Role { get; }
@@ -23,9 +27,5 @@
         public string PhoneNumber { get; set; }
 
         public string Sex { get; set; }
-        
-        public User() {
-            //TODO: Make a query to DB
-        }
     }
 }
