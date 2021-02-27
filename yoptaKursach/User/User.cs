@@ -1,4 +1,4 @@
-﻿namespace yoptaKursach.Properties.User  {
+﻿namespace yoptaKursach.User {
     public enum UserRole {
         Administrator,
         Manager,
@@ -9,7 +9,7 @@
         public User() {
             //TODO: Make a query to DB
         }
-        
+
         public int Id { get; }
 
         public UserRole Role { get; }
