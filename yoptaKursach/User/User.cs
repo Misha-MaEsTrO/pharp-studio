@@ -1,12 +1,13 @@
 ﻿namespace yoptaKursach.User {
     public enum UserRole {
-        Administrator,
-        Manager,
-        Consumer
+        Administrator = 0,
+        Manager = 1,
+        Consumer = 2
     }
 
     public class User {
         public User() {
+            
             //TODO: Make a query to DB
         }
 
