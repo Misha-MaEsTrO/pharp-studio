@@ -1,4 +1,7 @@
-﻿namespace yoptaKursach.User {
+﻿using System.Windows;
+using MySql.Data.MySqlClient;
+
+namespace yoptaKursach {
     public enum UserRole {
         Administrator = 0,
         Manager = 1,
@@ -6,11 +9,7 @@
     }
 
     public class User {
-        public User() {
-            
-            //TODO: Make a query to DB
-        }
-
+        
         public int Id { get; }
 
         public UserRole Role { get; }
@@ -28,5 +27,16 @@
         public string PhoneNumber { get; set; }
 
         public string Sex { get; set; }
+        
+        
+        public User() {
+            using (MySqlConnection connection = DbConnection.SqlConnection()) {
+                connection.Open();
+                var reader = new MySqlCommand("select id from users where login = 'admin'", connection).ExecuteScalar();
+                MessageBox.Show($"{reader}");
+                
+            }
+        }
+        
     }
 }
